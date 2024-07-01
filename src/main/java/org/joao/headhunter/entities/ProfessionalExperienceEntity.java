@@ -1,9 +1,6 @@
 package org.joao.headhunter.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ProfessionalExperienceEntity")
@@ -18,7 +15,9 @@ public class ProfessionalExperienceEntity extends BaseEntity {
     @Column(name = "description")
     private String description;
 
-//    @ManyToOne AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @ManyToOne
+    @JoinColumn(name = "candidateId", nullable = false)
+    private CandidateEntity candidateEntity;
 
     public ProfessionalExperienceEntity() {}
 

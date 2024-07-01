@@ -1,14 +1,16 @@
 package org.joao.headhunter.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "CandidateJobOpportunityEntity")
 public class CandidateJobOpportunityEntity extends BaseEntity {
 
-//    @OneToMany AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @ManyToOne
+    @JoinColumn(name = "candidateId", nullable = false)
+    private CandidateEntity candidateEntity;
 
-//    @OneToMany AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @ManyToOne
+    @JoinColumn(name = "jobOpportunityId", nullable = false)
+    private JobOpportunityEntity jobOpportunityEntity;
 }

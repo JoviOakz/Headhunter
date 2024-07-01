@@ -18,6 +18,15 @@ public class CandidateEntity extends BaseEntity {
     @OneToMany(mappedBy = "candidateEntity")
     private Set<CandidateSkillEntity> candidateSkills;
 
+    @OneToMany(mappedBy = "candidateEntity")
+    private Set<CandidateJobOpportunityEntity> candidateJobOpportunities;
+
+    @OneToMany(mappedBy = "candidateEntity")
+    private Set<ProfessionalAbilityEntity> professionalAbilities;
+
+    @OneToMany(mappedBy = "candidateEntity")
+    private Set<ProfessionalExperienceEntity> professionalExperiences;
+
     public CandidateEntity() {}
 
     public CandidateEntity(String personalDescription) {

@@ -1,9 +1,6 @@
 package org.joao.headhunter.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "ProfessionalAbilityEntity")
@@ -18,7 +15,9 @@ public class ProfessionalAbilityEntity extends BaseEntity {
     @Column(name = "certification")
     private String certification;
 
-//    @OneToMany AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @ManyToOne
+    @JoinColumn(name = "candidateId", nullable = false)
+    private CandidateEntity candidateEntity;
 
     public ProfessionalAbilityEntity() {}
 

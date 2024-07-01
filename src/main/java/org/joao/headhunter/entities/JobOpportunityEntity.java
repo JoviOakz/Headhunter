@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "JobOpportunityEntity")
 public class JobOpportunityEntity extends BaseEntity {
@@ -21,7 +23,8 @@ public class JobOpportunityEntity extends BaseEntity {
     @Column(name = "extraRequirements")
     private String extraRequirements;
 
-//    @OneToMany AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @OneToMany(mappedBy = "jobOpportunityEntity")
+    private Set<CandidateJobOpportunityEntity> candidateJobOpportunityEntities;
 
     public JobOpportunityEntity() {}
 
