@@ -12,8 +12,6 @@ public class FeedbackEntity extends BaseEntity {
     @Column(name = "message")
     private String message;
 
-//    @OneToMany AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-
     public FeedbackEntity() {}
 
     public FeedbackEntity(String message) {

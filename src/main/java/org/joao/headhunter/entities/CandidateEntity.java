@@ -27,6 +27,9 @@ public class CandidateEntity extends BaseEntity {
     @OneToMany(mappedBy = "candidateEntity")
     private Set<ProfessionalExperienceEntity> professionalExperiences;
 
+    @OneToMany(mappedBy = "candidateEntity")
+    private Set<CandidateSkillTestEntity> candidateSkillTests;
+
     public CandidateEntity() {}
 
     public CandidateEntity(String personalDescription) {

@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "SkillTestEntity")
 public class SkillTestEntity extends BaseEntity {
@@ -21,7 +23,8 @@ public class SkillTestEntity extends BaseEntity {
     @Column(name = "result")
     private Integer result;
 
-//    @OneToMany AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @OneToMany(mappedBy = "skillTestEntity")
+    private Set<CandidateSkillTestEntity> candidateSkillTestEntities;
 
     public SkillTestEntity() {}
 

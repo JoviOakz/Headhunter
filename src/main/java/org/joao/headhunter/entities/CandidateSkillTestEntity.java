@@ -1,14 +1,20 @@
 package org.joao.headhunter.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "CandidateSkillTestEntity")
 public class CandidateSkillTestEntity extends BaseEntity {
 
-//    @OneToMany AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @ManyToOne
+    @JoinColumn(name = "candidateId", nullable = false)
+    private CandidateEntity candidateEntity;
 
-//    @OneToMany AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+    @ManyToOne
+    @JoinColumn(name = "skillTestId", nullable = false)
+    private SkillTestEntity skillTestEntity;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "feedbackId", referencedColumnName = "id")
+    private FeedbackEntity feedbackEntity;
 }
