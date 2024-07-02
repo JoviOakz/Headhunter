@@ -4,9 +4,11 @@ import org.joao.headhunter.entities.UserEntity;
 import org.joao.headhunter.repositories.CreateUserJPARepository;
 import org.joao.headhunter.services.CreateUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DatabaseCreateUser implements CreateUserService {
 
     @Autowired
