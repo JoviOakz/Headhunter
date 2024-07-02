@@ -13,7 +13,7 @@ public class CreateUserController {
     @Autowired
     CreateUserService repo;
 
-    @PostMapping("create")
+    @PostMapping("/create")
     public String postMethodUser(@RequestBody UserEntity user) {
         return repo.save(user);
     }
